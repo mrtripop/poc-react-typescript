@@ -1,14 +1,17 @@
-import Hero from './components/Hero'
+import { About, Footer, Header } from './container';
+import { Navbar } from './components/';
+
+import './App.scss';
 
 function App() {
   return (
-    <div>
-      <Hero
-        title='Title Test'
-        paragraph='Hello world, Im test paragraph by using anything that I want to test'
-      />
+    <div className='app'>
+      <Navbar />
+      <Header />
+      <About />
+      <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
 type Props = {
-  title?: string
-  paragraph?: string
-}
+  title?: string;
+  paragraph?: string;
+};
 
 const Hero = (props: Props) => {
   return (
@@ -11,7 +11,7 @@ const Hero = (props: Props) => {
       <h1>{props.title}</h1>
       <p>{props.paragraph}</p>
     </div>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;
