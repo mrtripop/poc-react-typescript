@@ -22,7 +22,6 @@ const Work = () => {
   useEffect(() => {
     const query = '*[_type == "works"]';
     client.fetch(query).then((data) => {
-      console.log('[data]', data);
       setWorks(data);
       setFilterWork(data);
     });

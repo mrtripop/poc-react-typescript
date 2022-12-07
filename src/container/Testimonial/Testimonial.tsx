@@ -22,7 +22,6 @@ const Testimonial = () => {
     const brandsQuery = '*[_type == "brands"]';
 
     client.fetch(query).then((data) => {
-      console.log(data);
       setTestimonials(data);
     });
 
