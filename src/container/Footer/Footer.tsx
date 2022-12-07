@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 
 import { images } from '../../constants';
 import { AppWrap, MotionWrap } from '../../wrapper';
@@ -14,13 +14,15 @@ const Footer = () => {
 
   const { name, email, message } = formData;
 
-  const handleChangeInput = (e: any) => {
+  const handleChangeInput = (
+    e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>,
+  ) => {
     const { name, value } = e.target;
 
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (): void => {
     setLoading(true);
 
     const contact = {

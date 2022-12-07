@@ -1,9 +1,7 @@
 import { BsTwitter, BsInstagram } from 'react-icons/bs';
 import { FaFacebook } from 'react-icons/fa';
 
-type Props = {};
-
-const SocialMedia = (props: Props) => {
+const SocialMedia = () => {
   return (
     <div className='app__social'>
       <div>

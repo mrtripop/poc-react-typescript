@@ -6,9 +6,7 @@ import { motion } from 'framer-motion';
 import './Navbar.scss';
 import { images } from '../../constants';
 
-type Props = {};
-
-const Navbar = (props: Props) => {
+const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
