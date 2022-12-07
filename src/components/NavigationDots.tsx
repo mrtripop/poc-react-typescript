@@ -5,7 +5,7 @@ type Props = {
 const NavigationDots = (props: Props) => {
   return (
     <div className='app__navigation'>
-      {['home', 'about', 'work', 'skills', 'contact', 'testimonials', 'contact'].map(
+      {['home', 'about', 'work', 'skill', 'contact', 'testimonial', 'contact'].map(
         (item, index) => (
           <a
             href={`#${item}`}
