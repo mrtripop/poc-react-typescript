@@ -3,12 +3,12 @@ import { motion } from 'framer-motion';
 
 import { client, urlFor } from '../../client';
 import { AppWrap, MotionWrap } from '../../wrapper';
+import { AboutType } from '../../types';
+
 import './About.scss';
 
-type Props = {};
-
-const About = (props: Props) => {
-  const [abouts, setAbouts] = useState<any[]>([]);
+const About = () => {
+  const [abouts, setAbouts] = useState<AboutType[]>([]);
 
   useEffect(() => {
     const query = '*[_type == "abouts"]';
