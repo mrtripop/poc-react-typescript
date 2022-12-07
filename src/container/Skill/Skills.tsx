@@ -4,30 +4,13 @@ import ReactTooltip from 'react-tooltip';
 
 import { AppWrap, MotionWrap } from '../../wrapper';
 import { urlFor, client } from '../../client';
+import { ExperienceType, SkillType } from '../../types';
+
 import './Skills.scss';
 
-type Props = {};
-
-type Skill = {
-  name: string;
-  bgColor: string;
-  icon: ImageBitmap;
-};
-
-type WorkExperience = {
-  name: string;
-  company: string;
-  desc: string;
-};
-
-type Experience = {
-  year: string;
-  works: Array<WorkExperience>;
-};
-
-const Skills = (props: Props) => {
-  const [experiences, setExperiences] = useState<Experience[]>([]);
-  const [skills, setSkills] = useState<Skill[]>([]);
+const Skills = () => {
+  const [experiences, setExperiences] = useState<ExperienceType[]>([]);
+  const [skills, setSkills] = useState<SkillType[]>([]);
 
   useEffect(() => {
     const query = '*[_type == "experiences"]';
@@ -54,7 +37,7 @@ const Skills = (props: Props) => {
               whileInView={{ opacity: [0, 1] }}
               transition={{ duration: 0.5 }}
               className='app__skills-item app__flex'
-              key={skill.name}
+              key={skill._id}
             >
               <div className='app__flex' style={{ backgroundColor: skill.bgColor }}>
                 <img src={urlFor(skill.icon).url()} alt={skill.name} />
@@ -66,7 +49,7 @@ const Skills = (props: Props) => {
 
         <motion.div className='app__skills-exp'>
           {experiences?.map((experience) => (
-            <motion.div className='app__skills-exp-item' key={experience.year}>
+            <motion.div className='app__skills-exp-item' key={experience._id}>
               <div className='app__skills-exp-year'>
                 <p className='bold-text'>{experience.year}</p>
               </div>
