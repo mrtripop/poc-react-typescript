@@ -4,13 +4,15 @@ import { motion } from 'framer-motion';
 
 import { AppWrap, MotionWrap } from '../../wrapper';
 import { urlFor, client } from '../../client';
+import { WorkType } from '../../types';
+
 import './Work.scss';
 
-type Props = {};
+const arrayActiveFilter: string[] = ['UI/UX', 'Web App', 'Mobile App', 'React JS', 'All'];
 
-const Work = (props: Props) => {
-  const [works, setWorks] = useState<any[]>([]);
-  const [filterWork, setFilterWork] = useState<any[]>([]);
+const Work = () => {
+  const [works, setWorks] = useState<WorkType[]>([]);
+  const [filterWork, setFilterWork] = useState<WorkType[]>([]);
   const [activeFilter, setActiveFilter] = useState<string>('All');
   const [animateCard, setAnimateCard] = useState<{ y: number; opacity: number }>({
     y: 0,
@@ -20,6 +22,7 @@ const Work = (props: Props) => {
   useEffect(() => {
     const query = '*[_type == "works"]';
     client.fetch(query).then((data) => {
+      console.log('[data]', data);
       setWorks(data);
       setFilterWork(data);
     });
@@ -45,7 +48,7 @@ const Work = (props: Props) => {
       </h2>
 
       <div className='app__work-filter'>
-        {['UI/UX', 'Web App', 'Mobile App', 'React JS', 'All'].map((item, index) => (
+        {arrayActiveFilter.map((item, index) => (
           <div
             key={index}
             onClick={() => handleWorkFilter(item)}
@@ -66,7 +69,7 @@ const Work = (props: Props) => {
         {filterWork.map((work, index) => (
           <div className='app__work-item app__flex' key={index}>
             <div className='app__work-img app__flex'>
-              <img src={urlFor(work.imgUrl).url()} alt={work.name} />
+              <img src={urlFor(work.imgUrl).url()} alt={work.title} />
 
               <motion.div
                 whileHover={{ opacity: [0, 1] }}

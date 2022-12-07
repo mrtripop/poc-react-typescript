@@ -1,5 +1,15 @@
 import { SanityImageSource } from '@sanity/image-url/lib/types/types';
 
+export type WorkType = {
+  _id: string;
+  title: string;
+  description: string;
+  projectLink: string;
+  codeLink: string;
+  imgUrl: SanityImageSource;
+  tags: Array<string>;
+};
+
 export type SkillType = {
   _id: string;
   name: string;
