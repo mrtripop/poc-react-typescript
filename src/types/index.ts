@@ -47,3 +47,9 @@ export type TestimonialType = {
   company: string;
   feedback: string;
 };
+
+export type FormDataType = {
+  name: string;
+  email: string;
+  message: string;
+};
