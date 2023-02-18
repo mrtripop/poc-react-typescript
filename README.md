@@ -1,7 +1,7 @@
 # React Application with Typescript
 
 This project for practice react application with Typescript, Storybook, SEO, Prettier, Project structure.
-You can follow in [Github](https://github.com/mrtripop/react-bootstrap-typescript)
+You can follow in [Github](https://github.com/mrtripop/react-practice-typescript)
 
 ## Prerequisite
 
