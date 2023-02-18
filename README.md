@@ -1,46 +1,67 @@
-# React Bootstrap Typescript
+# React Application with Typescript
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project for practice react application with Typescript, Storybook, SEO, Prettier, Project structure.
+You can follow in [Github](https://github.com/mrtripop/react-bootstrap-typescript)
 
-## Available Scripts
+## Prerequisite
 
-In the project directory, you can run:
+- NVM `0.38.0`
+- Node `18.3.0`
+- Yarn `1.22.19`
+- Sanity cli `2.34.0`
 
-### `npm start`
+## Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- .storybook
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+  - config file for storybook
 
-### `npm test`
+- public
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  - `robots.txt` - File enable crawler agent for optimize SEO
+  - `sitemap.xml` - File map resource for optimize SEO
 
-### `npm run build`
+- src
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  - `assets` - Image and other assets
+  - `components` - Atom component that use in all component
+  - `constants` - Import image and map to react component
+  - `container` - Main component
+  - `types` - Type of component
+  - `wrapper` - Component that wrap section component for reuse motion
+
+- client.ts
+
+  - This file is main config for `Sanity`
+  - Create `Sanity studio` for `ClientConfig`
+
+## How to run on `localhost`
+
+First, install dependency
+
+```
+yarn install
+```
+
+Second, run app in development mode.
+
+```
+yarn dev
+```
+
+Then open [localhost:5173](http://localhost:5173) in the browser.
+
+Builds the app for production to `dist` folder.
+
+```
+yarn build
+```
 
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Appendix
 
-### `npm run eject`
+You can learn more with
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [Youtube JavascriptMastery](https://www.youtube.com/watch?v=3HNyXCPDQ7Q&ab_channel=JavaScriptMastery)
